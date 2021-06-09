@@ -16,7 +16,7 @@ describe('SimpleComponent comp-t', () => {
 
     // Находим элемент (заодно проверяя работу props)
     const linkEl = screen.getByRole('link', { name: 'Link text' });
-    // Проверяем, что он успешно отрендерился
+    // Проверяем, что рендер прошел успешно
     expect(linkEl).toBeInTheDocument();
   });
 });
