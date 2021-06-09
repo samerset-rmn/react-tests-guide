@@ -25,7 +25,6 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
     "babel-jest": "^27.0.2",
-    "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "^7.12.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-node": "^4.1.0",
