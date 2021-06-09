@@ -5,18 +5,18 @@ import SimpleComponent from '.';
 
 describe('SimpleComponent comp-t', () => {
   test('Renders with props', () => {
-    // Задаем props
+    // Создаем объект props
     const props = {
       name: 'Link text',
       url: 'https://www.google.com'
     };
 
-    // Рендерим компонент с пропсами
+    // Передаем props в компонент и рендерим его
     render(<SimpleComponent {...props} />);
 
-    // Находим элемент (заодно проверяя props)
+    // Находим элемент (заодно проверяя работу props)
     const linkEl = screen.getByRole('link', { name: 'Link text' });
-    // Делаем проверку на его успешное наличие
+    // Проверяем, что он успешно отрендерился
     expect(linkEl).toBeInTheDocument();
   });
 });
