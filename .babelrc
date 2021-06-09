@@ -1,7 +1,13 @@
 {
   "env": {
-    // development
-    // production
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [["inline-react-svg", { "svgo": false }]]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [["inline-react-svg", { "svgo": false }]]
+    },
     "test": {
       "presets": ["next/babel"],
       "plugins": [["inline-react-svg", { "svgo": false }]]
