@@ -19,9 +19,6 @@ describe('Link comp-t', () => {
 
     // Проверяем, что переданные props успешно приняты
     expect(link).toHaveTextContent('Link text');
-    expect(link).toHaveAttribute(
-      'href',
-      expect.stringContaining('https://www.google.com')
-    );
+    expect(link).toHaveAttribute('href', 'https://www.google.com');
   });
 });
