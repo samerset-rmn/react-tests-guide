@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 /**
  * Простой компонент без состояния.
  */
-function SimpleComponent({ url, name }) {
+function Link({ url, name }) {
   return <a href={url}>{name}</a>;
 }
 
-SimpleComponent.propTypes = {
+Link.propTypes = {
   url: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired
 };
 
-export default SimpleComponent;
+export default Link;

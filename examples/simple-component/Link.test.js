@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 // Components
-import SimpleComponent from '.';
+import Link from '.';
 
-describe('SimpleComponent comp-t', () => {
+describe('Link comp-t', () => {
   test('Renders with props', () => {
     // Создаем объект props
     const props = {
@@ -12,7 +12,7 @@ describe('SimpleComponent comp-t', () => {
     };
 
     // Передаем props в компонент и рендерим его
-    render(<SimpleComponent {...props} />);
+    render(<Link {...props} />);
 
     // Находим элемент (заодно проверяя работу props)
     const linkEl = screen.getByRole('link', { name: 'Link text' });
