@@ -11,7 +11,7 @@ describe('TextModal comp-t', () => {
     // Рендерим компонент с содержимым
     render(<TextModal>{modalContent}</TextModal>);
 
-    // Находим кнопку для открытия модалки
+    // Находим кнопку для открытия модалки (используем RegExp для надежного поиска, избегая буквальных строк)
     const button = screen.getByRole('button', { name: /(закрыть|открыть)/i });
     // И саму модалку (передаем параметр `hidden: true`, т.к. она изначально невидима и `getByRole` ее не найдет)
     const modal = screen.getByRole('dialog', {
