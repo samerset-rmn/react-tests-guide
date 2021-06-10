@@ -48,6 +48,8 @@
 
 Для рендера компонентов и их поиска используется библиотека [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
 
+Для проверки содержимого или состояния DOM элементов используется [jest-dom](github.com/testing-library/jest-dom)
+
 Для вызова событий и взаимодействия с компонентами используется [@testing-library/user-event](https://testing-library.com/docs/ecosystem-user-event/).
 
 Для подделывания запросов к API используется [Nock](github.com/nock/nock).
@@ -58,9 +60,8 @@
 
 В материалах могут встречаться другие библиотеки или методы тестирования. Поэтому этот список нужен преимущественно для ознакомления с логикой написания тестов, а за примерами иногда лучше заглянуть в `/examples`.
 
-Ценность материалов обозначена кол-вом &starf; (где 5 - самый актуальный или полезный материал).
-
-- [Введение в тестирование](https://www.freecodecamp.org/news/testing-react-hooks/) (&starf;&starf;&starf;&star;&star;)
-- [Современные методы тестирования](https://blog.sapegin.me/all/react-testing-3-jest-and-react-testing-library/) (&starf;&starf;&starf;&starf;&starf;)
-- [Распространенные ошибки](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library) (&starf;&starf;&starf;&starf;&starf;)
-- [Шпаргалка функций Jest](https://devhints.io/jest) (&starf;&starf;&starf;&starf;&star;)
+- [Введение в тестирование](https://www.freecodecamp.org/news/testing-react-hooks/) (есть устаревшее)
+- [Современные методы тестирования](https://blog.sapegin.me/all/react-testing-3-jest-and-react-testing-library/)
+- [Распространенные ошибки](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Список `expect` методов библиотеки Jest](https://jestjs.io/docs/expect)
+- [Список сопоставителей `(matchers)` библиотеки jest-dom](https://github.com/testing-library/jest-dom)
