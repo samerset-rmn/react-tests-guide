@@ -14,9 +14,14 @@ describe('Link comp-t', () => {
     // Передаем props в компонент и рендерим его
     render(<Link {...props} />);
 
-    // Находим элемент (заодно проверяя работу props)
-    const linkEl = screen.getByRole('link', { name: 'Link text' });
-    // Проверяем, что рендер прошел успешно
-    expect(linkEl).toBeInTheDocument();
+    // Находим элемент
+    const link = screen.getByRole('link', { name: 'Link text' });
+
+    // Проверяем, что переданные props успешно приняты
+    expect(link).toHaveTextContent('Link text');
+    expect(link).toHaveAttribute(
+      'href',
+      expect.stringContaining('https://www.google.com')
+    );
   });
 });
