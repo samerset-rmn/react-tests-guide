@@ -106,7 +106,7 @@ describe('Main logic tests', () => {
     screen.getByRole('button', { name: 'Some text' });
     ```
 
-    Так мы, во-первых, будем уверены в том, что найденный элемент является кнопкой, а во-вторых, проверяем его же доступность. Список [ARIA Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles).
+    В этом примере мы, во-первых, будем уверены в том, что найденный элемент является именно кнопкой, а во-вторых, проверяем ее же доступность. Список [ARIA Roles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles).
 
 - Для разных элементов есть более подходящие `queries`, чем другие. Например, для полей форм лучше использовать `getByLabelText`. 
 - Различия между `getBy...`, `queryBy...` и `findBy...`:
