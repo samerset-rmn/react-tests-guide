@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import TextModal from '.';
 
 describe('TextModal comp-t', () => {
-  test('button displays the modal', () => {
+  it('changes the modal visibility by clicking on button', () => {
     // Содержимое компонента
     const modalContent = 'Окно с текстом';
 
