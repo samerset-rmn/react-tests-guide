@@ -4,22 +4,24 @@ import { Formik, Field, Form } from 'formik';
 const BASE_URL = 'https://foo.bar';
 
 /**
- * Функция для обработки отправки формы. Принимает значения из полей и отправляет их,
- * через некоторое время возвращая успешный ответ.
+ * Функция-обработчик отправки формы. Принимает содержимое полей, отправляет его
+ * и возвращает true.
  */
 const sendSignUpRequest = async (values) => {
-  return fetch(`${BASE_URL}/registration`, { method: 'POST', body: values })
-    .then(() => setTimeout(() => true), 500)
-    .then((res) => res);
+  return fetch(`${BASE_URL}/registration`, {
+    method: 'POST',
+    body: values
+  }).then(() => true);
 };
 
 /**
  * Компонент с формой.
  * При отправке выполняет запрос через переданный асинхронный колбэк.
- * 
+ *
  * Заметка:
- * `role="form"` присваивается элементу <form /> только когда у ее есть доступное название.
- * Поэтому форме задано имя через `aria-labelledby`, чтобы `getByRole` функция нашла ее по роли `form`.
+ * `role="form"` присваивается элементу <form /> только когда у нее есть доступное название.
+ * Поэтому ей задано имя через `aria-labelledby`, чтобы она была доступна для функции `getByRole`
+ * по роли `form`.
  */
 function SignUpForm() {
   return (
