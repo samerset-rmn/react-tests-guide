@@ -79,7 +79,7 @@
 
 Поэтому мы тестируем *результат*, а не реализацию. Работаем именно с тем, что в конечно итоге дойдет до пользователя и будет непосредственно влиять на его опыт. По этой же причине мы не тестируем [снимками](https://jestjs.io/docs/snapshot-testing). Особенно приятно, что такой подход не только надежнее, но и проще в реализации и поддержке.
 
-Подробнее на эту тему можно почитать вот в [этом материале](https://kentcdodds.com/blog/testing-implementation-details).
+Подробнее на эту тему можно почитать в [этом материале](https://kentcdodds.com/blog/testing-implementation-details).
 
 #### Как найти нужный DOM элемент?
 
@@ -116,4 +116,4 @@
 - [Список `expect` методов библиотеки Jest](https://jestjs.io/docs/expect)
 - [Список сопоставителей `(matchers)` библиотеки jest-dom](https://github.com/testing-library/jest-dom)
 
-Так же советую почитать материалы от [Kent C. Dodds](https://kentcdodds.com/blog/?q=testing), это один из лучших знатоков тестирования.
+Так же советую почитать материалы от одного из лучших знатоков тестирования – [Kent C. Dodds](https://kentcdodds.com/blog/?q=testing).
