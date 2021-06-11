@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // Components
 import SignUpForm from '.';
-
-const BASE_URL = 'https://foo.bar';
+// Config
+import { BASE_URL } from './config';
 
 describe('SignUpForm comp-t', () => {
   it('renders component successfully', () => {

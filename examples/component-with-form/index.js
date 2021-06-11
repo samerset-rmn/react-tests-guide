@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-
-const BASE_URL = 'https://foo.bar';
+// Config
+import { BASE_URL } from './config';
 
 /**
  * Функция-обработчик отправки формы. Принимает содержимое полей, отправляет его
