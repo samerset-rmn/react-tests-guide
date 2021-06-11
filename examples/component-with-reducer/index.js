@@ -6,7 +6,7 @@ import { actionTypes, initialState, reducer } from './reducer';
  * Компонент с состоянием под управлением редьюсера.
  * Меняет состояние "Подтверждено" при клике на кнопку.
  */
-const ConfirmationBlock = () => {
+function ConfirmationBlock() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const onClickHandler = () => {
@@ -23,6 +23,6 @@ const ConfirmationBlock = () => {
       </button>
     </div>
   );
-};
+}
 
 export default ConfirmationBlock;
