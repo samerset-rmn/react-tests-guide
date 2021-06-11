@@ -47,12 +47,12 @@
 ### Основной синтаксис тестов
 
 Каждый тест оборачивается в функцию `it()`:
-```
+```js
 it('sends request on submit', () => {...})
 ```
 
 Тесты можно группировать в смысловые блоки с помощью `describe()`:
-```
+```js
 describe('Main logic tests', () => {
     it('does something', () => {...})
 })
@@ -102,8 +102,7 @@ describe('Main logic tests', () => {
 
 - Для элементов с определенной `aria` ролью используем `...ByRole` запросы.\
     Например:
-
-    ```
+    ```js
     screen.getByRole('button', { name: 'Some text' });
     ```
 
