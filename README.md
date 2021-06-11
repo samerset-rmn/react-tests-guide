@@ -151,7 +151,7 @@ await userEvent.type(screen.getByLabelText(/имя/i), 'Роман', { delay: 1 
 
 Можно почитать отдельный [issue](https://github.com/testing-library/user-event/issues/539) про это
 
-#### userEvent.type() не заполняет поле формы до конца
+#### `userEvent.type()` не заполняет поле формы до конца
 
 Та же самая проблема. В `userEvent.type()` добавляем параметр `{ delay: 1 }`, делая эту функцию асинхронной, и ставим впереди `await` для ожидания выполнения промиса.
 
