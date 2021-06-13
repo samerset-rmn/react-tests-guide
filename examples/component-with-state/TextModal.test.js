@@ -28,17 +28,11 @@ describe('TextModal comp-t', () => {
     // Проверяем, что она открылась
     expect(modal).toBeVisible();
     // Проверяем, что `aria-label` кнопки поменялся
-    expect(button).toHaveAttribute(
-      'aria-label',
-      expect.stringMatching(/закрыть/i)
-    );
+    expect(button).toHaveAccessibleName(/закрыть/i);
 
     // Те же действия, но в обратном порядке
     userEvent.click(button);
     expect(modal).not.toBeVisible();
-    expect(button).toHaveAttribute(
-      'aria-label',
-      expect.stringMatching(/открыть/i)
-    );
+    expect(button).toHaveAccessibleName(/открыть/i);
   });
 });
