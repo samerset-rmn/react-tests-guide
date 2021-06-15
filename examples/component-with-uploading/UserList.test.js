@@ -32,6 +32,14 @@ describe('UserList comp-t', () => {
   });
 
   it('uploads next list items on click', async () => {
+    // Рендерим компонент с props
+    render(<UserList {...props} />);
+
+    // Находим кнопку "Показать ещё"
+    const loadMoreButton = screen.getByRole('button', {
+      name: /показать ещё/i,
+    });
+
     // Устанавливаем перехватчик GET запроса
     nock(BASE_URL)
       .get('/users')
@@ -50,14 +58,6 @@ describe('UserList comp-t', () => {
           },
         ],
       });
-
-    // Рендерим компонент с props
-    render(<UserList {...props} />);
-
-    // Находим кнопку "Показать ещё"
-    const loadMoreButton = screen.getByRole('button', {
-      name: /показать ещё/i,
-    });
 
     // Запускаем асинхронную подзагрузку по клику
     userEvent.click(loadMoreButton);
