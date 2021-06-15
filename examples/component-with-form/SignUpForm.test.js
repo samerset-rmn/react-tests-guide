@@ -60,7 +60,7 @@ describe('SignUpForm comp-t', () => {
       .post('/users', formValues)
       .reply(201, { data: 'New user ID' });
 
-    // После оставшихся асинхронных действие производим проверку
+    // После оставшихся асинхронных действий производим проверку
     await waitFor(() => {
       // Кнопка "Отправить" вернулась во включенное состояние
       expect(submitButton).toBeEnabled();
