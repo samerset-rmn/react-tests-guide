@@ -42,6 +42,7 @@
     "eslint-plugin-testing-library": "^4.6.0",
     "jest": "^27.0.4",
     "nock": "^13.1.0",
+    "node-fetch": "^2.6.1",
     "prettier": "2.1.2"
   }
 }
