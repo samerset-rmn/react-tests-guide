@@ -146,7 +146,7 @@ nock(BASE_API_URL).get(API_PATH).reply(200, { some_data: [] });
 ```
 
 Примеры использования `nock` в тестах:\
-`/examples/component-with-form`
+[/examples/component-with-form](/examples/component-with-form)
 
 ## Полезные материалы
 
