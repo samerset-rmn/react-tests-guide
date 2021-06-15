@@ -90,9 +90,9 @@ describe('Main logic tests', () => {
 
 Для вызова событий из DOM используется [@testing-library/user-event](https://github.com/testing-library/user-event).
 
-Для перехвата и подделывания `fetch` запросов используется [nock](github.com/nock/nock).
+Для перехвата и подделывания `fetch` запросов используется [nock](https://github.com/nock/nock).
 
-Синтаксис тестов и основные методы для работы с ними обеспечивает [nest](https://jestjs.io/docs/getting-started)
+Синтаксис тестов и основные методы для работы с ними обеспечивает [jest](https://jestjs.io/docs/getting-started)
 
 ## Частые вопросы
 
