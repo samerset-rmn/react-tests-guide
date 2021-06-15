@@ -10,7 +10,7 @@ function Link({ url, name }) {
 
 Link.propTypes = {
   url: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 };
 
 export default Link;

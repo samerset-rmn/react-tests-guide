@@ -8,7 +8,7 @@ describe('Link comp-t', () => {
     // Создаем объект props
     const props = {
       name: 'Link text',
-      url: 'https://www.google.com'
+      url: 'https://www.google.com',
     };
 
     // Передаем props в компонент и рендерим его

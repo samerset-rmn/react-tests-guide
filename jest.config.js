@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '\\.(js)?$': 'babel-jest'
+    '\\.(js)?$': 'babel-jest',
   },
   testMatch: ['<rootDir>/tests/**/*.js', '**/*.test.js'],
   testEnvironment: 'jsdom',
@@ -8,7 +8,7 @@ module.exports = {
   // Поддержка алиасов абсолютных путей импорта, указанных в jsconfig.json
   moduleNameMapper: {
     '^@sharedComp/(.*)$': '<rootDir>/components/_shared/$1',
-    '^@config$': '<rootDir>/config'
+    '^@config$': '<rootDir>/config',
   },
   testPathIgnorePatterns: [
     '/node_modules/',
@@ -19,11 +19,11 @@ module.exports = {
     '/helpers/',
     '/animations/',
     '/middlewares',
-    '/.next/'
+    '/.next/',
   ],
   setupFilesAfterEnv: [
     '<rootDir>/jest.setup.js',
-    '@testing-library/jest-dom/extend-expect'
+    '@testing-library/jest-dom/extend-expect',
   ],
-  collectCoverageFrom: ['<rootDir>/components/**/*.js']
+  collectCoverageFrom: ['<rootDir>/components/**/*.js'],
 };

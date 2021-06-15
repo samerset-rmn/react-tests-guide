@@ -4,12 +4,12 @@ module.exports = {
   plugins: ['prettier', 'babel', 'jest', 'jest-dom', 'testing-library'],
   globals: {
     fetch: 'readonly',
-    window: 'readonly'
+    window: 'readonly',
+    nock: 'readonly',
   },
   env: {
     browser: true,
-    nock: true,
-    'jest/globals': true
+    'jest/globals': true,
   },
   rules: {
     'prettier/prettier': 'error',
@@ -17,7 +17,7 @@ module.exports = {
     // Разрешить анонимные функции
     'func-names': 'off',
     // Разрешить JSX в файлах .js
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
   },
   overrides: [
     // Правила для файлов с тестами
@@ -27,22 +27,22 @@ module.exports = {
         // Разрешить деструктуризацию props
         'react/jsx-props-no-spreading': 'off',
         // Разрешить импорты из devDependencies
-        'import/no-extraneous-dependencies': 'off'
-      }
-    }
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
   ],
   settings: {
     // Поддержка Absolute path imports
     'import/resolver': {
       node: {
-        paths: ['.']
+        paths: ['.'],
       },
       alias: {
         map: [
           ['@sharedComp/*', './components/_shared'],
-          ['@config', './config']
-        ]
-      }
-    }
-  }
+          ['@config', './config'],
+        ],
+      },
+    },
+  },
 };

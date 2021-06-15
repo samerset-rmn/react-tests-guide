@@ -13,17 +13,17 @@ function TextModal({ children }) {
   return (
     <div>
       <button
-        type='button'
+        type="button"
         aria-label={`${isOpen ? 'Закрыть' : 'Открыть'} модальное окно`}
         onClick={onClickHandler}
       />
       <div
-        role='dialog'
-        aria-labelledby='dialogTitle'
+        role="dialog"
+        aria-labelledby="dialogTitle"
         style={{ display: isOpen ? 'flex' : 'none' }}
       >
         <div>
-          <h3 id='dialogTitle'>{children}</h3>
+          <h3 id="dialogTitle">{children}</h3>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@ function TextModal({ children }) {
 }
 
 TextModal.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.string.isRequired,
 };
 
 export default TextModal;

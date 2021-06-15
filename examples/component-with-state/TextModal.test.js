@@ -16,7 +16,7 @@ describe('TextModal comp-t', () => {
     const button = screen.getByRole('button', { name: /(закрыть|открыть)/i });
     // И саму модалку (передаем параметр `hidden: true`, т.к. она изначально невидима и `getByRole` ее не найдет)
     const modal = screen.getByRole('dialog', {
-      hidden: true
+      hidden: true,
     });
 
     // Проверяем, что модалка невидима и содержит текст, который мы передали

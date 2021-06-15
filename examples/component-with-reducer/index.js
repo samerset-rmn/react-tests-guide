@@ -18,7 +18,7 @@ function ConfirmationBlock() {
       <div>
         {state.isConfirmed ? <p>Готово!</p> : <p>Ожидание подтверждения...</p>}
       </div>
-      <button type='button' onClick={onClickHandler}>
+      <button type="button" onClick={onClickHandler}>
         Подтвердить
       </button>
     </div>

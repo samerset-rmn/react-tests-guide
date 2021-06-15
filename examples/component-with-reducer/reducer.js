@@ -1,9 +1,9 @@
 const actionTypes = {
-  SUCCESS: 'SUCCESS'
+  SUCCESS: 'SUCCESS',
 };
 
 const initialState = {
-  isConfirmed: false
+  isConfirmed: false,
 };
 
 function reducer(state, action) {
@@ -11,7 +11,7 @@ function reducer(state, action) {
     case actionTypes.SUCCESS:
       return {
         ...state,
-        isConfirmed: true
+        isConfirmed: true,
       };
     default:
       throw new Error('Не поддерживаемый тип action');
