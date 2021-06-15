@@ -1,4 +1,4 @@
-// URL псевдо API (https://reqres.in)
+// URL фейкового API (https://reqres.in)
 const BASE_URL = 'https://reqres.in/api';
 
 // eslint-disable-next-line import/prefer-default-export
