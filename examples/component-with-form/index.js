@@ -1,22 +1,31 @@
+/* eslint-disable no-console */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 // Config
 import { BASE_URL } from './config';
 
 /**
- * Функция-обработчик отправки формы. Принимает содержимое полей, отправляет его
- * и возвращает true.
+ * Функция-обработчик отправки формы.
+ * Принимает содержимое полей, отправляет его и возвращает true.
  */
 const sendSignUpRequest = async (values) => {
-  return fetch(`${BASE_URL}/registration`, {
+  return fetch(`${BASE_URL}/users`, {
+    mode: 'cors',
     method: 'POST',
-    body: values
-  }).then(() => true);
+    body: JSON.stringify(values),
+  })
+    .then(() => {
+      return true;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 };
 
 /**
  * Компонент с формой.
- * При отправке выполняет запрос через переданный асинхронный колбэк.
+ * При отправке выполняет запрос на псевдо API.
  *
  * Заметка:
  * `role="form"` присваивается элементу <form /> только когда у нее есть доступное название.
@@ -26,35 +35,44 @@ const sendSignUpRequest = async (values) => {
 function SignUpForm() {
   return (
     <div>
-      <h1 id='signUpHeading'>Регистрация</h1>
+      <h1 id="signUpHeading">Регистрация</h1>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          email: ''
+          name: '',
+          job: '',
+          policy: false,
         }}
-        onSubmit={async (values) => {
-          await sendSignUpRequest(values);
+        onSubmit={async (values, { resetForm }) => {
+          await sendSignUpRequest({
+            name: values.name,
+            job: values.job,
+          });
+
+          resetForm();
         }}
       >
-        <Form aria-labelledby='signUpHeading'>
-          <label>
-            Имя
-            <Field name='firstName' placeholder='Ваше имя' />
-          </label>
+        {({ isSubmitting }) => (
+          <Form aria-labelledby="signUpHeading">
+            <label>
+              Имя
+              <Field name="name" placeholder="Ваше имя" required />
+            </label>
 
-          <label>
-            Фамилия
-            <Field name='lastName' placeholder='Ваша фамилия' />
-          </label>
+            <label>
+              Работа
+              <Field name="job" required />
+            </label>
 
-          <label>
-            Email
-            <Field name='email' placeholder='jane@acme.com' type='email' />
-          </label>
+            <label>
+              Я прочел и согласен с политикой обработки персональных данных
+              <Field name="policy" type="checkbox" required />
+            </label>
 
-          <button type='submit'>Отправить</button>
-        </Form>
+            <button type="submit" disabled={isSubmitting}>
+              Отправить
+            </button>
+          </Form>
+        )}
       </Formik>
     </div>
   );
