@@ -126,7 +126,9 @@ describe('Main logic tests', () => {
 
 Никак не используем оригинальные `state` или `reducer`, а проверяем и оцениваем только результат их работы. Например то, что при клике на кнопку должна появиться модалка.
 
-Примеры есть в `/examples/component-with-state` и `/examples/component-with-reducer`.
+Примеры есть в\
+[/examples/component-with-state](/examples/component-with-state)\
+[/examples/component-with-reducer](/examples/component-with-reducer).
 
 ### Что за ошибка `should be wrapped into act`?
 
@@ -150,7 +152,7 @@ nock(BASE_API_URL).get(API_PATH).reply(200, { some_data: [] });
 
 ## Полезные материалы
 
-В этих материалах могут встречаться другие библиотеки или методы тестирования. Поэтому этот список скорее нужен для ознакомления с правильными подходами к написанию тестов, а за примерами иногда лучше заглянуть в `/examples`.
+В этих материалах могут встречаться другие библиотеки или методы тестирования. Поэтому этот список скорее нужен для ознакомления с правильными подходами к написанию тестов, а за примерами иногда лучше заглянуть в [/examples](/examples).
 
 - [Введение в тестирование](https://www.freecodecamp.org/news/testing-react-hooks/) (есть устаревшее)
 - [Современные методы тестирования](https://blog.sapegin.me/all/react-testing-3-jest-and-react-testing-library/)
