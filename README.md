@@ -86,9 +86,9 @@ describe('Main logic tests', () => {
 
 Для рендера и получения элементов используется библиотека [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
 
-Для проверки элементов на содержимое и состояние используется [jest-dom](github.com/testing-library/jest-dom)
+Для проверки элементов на содержимое и состояние используется [jest-dom](https://github.com/testing-library/jest-dom)
 
-Для вызова событий из DOM используется [@testing-library/user-event](https://testing-library.com/docs/ecosystem-user-event/).
+Для вызова событий из DOM используется [@testing-library/user-event](https://github.com/testing-library/user-event).
 
 Для перехвата и подделывания `fetch` запросов используется [nock](github.com/nock/nock).
 
