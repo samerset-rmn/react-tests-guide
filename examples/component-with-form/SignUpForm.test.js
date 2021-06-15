@@ -16,14 +16,20 @@ describe('SignUpForm comp-t', () => {
   });
 
   it('submits form and sends request with the form data', async () => {
-    // Рендерим компонент
-    render(<SignUpForm />);
-
     // Записываем значения полей, которые хотим ввести в форму
     const formValues = {
       name: 'Роман',
       job: 'Программист',
     };
+
+    // Устанавливаем перехватчик POST запроса из формы.
+    // Во время запроса возвращаем подделаный успешный ответ (! URL API должен быть настоящий)
+    nock(BASE_URL)
+      .post('/users', formValues)
+      .reply(201, { data: 'New user ID' });
+
+    // Рендерим компонент
+    render(<SignUpForm />);
 
     // Находим элементы формы
     const form = screen.getByRole('form');
@@ -54,11 +60,6 @@ describe('SignUpForm comp-t', () => {
     // Запускаем отправку формы и проверяем, что кнопка "Отправить" выключилась
     userEvent.click(submitButton);
     expect(submitButton).toBeDisabled();
-
-    // Перехватываем запрос из формы и возвращаем подделаный успешный ответ (! URL запроса настоящий)
-    nock(BASE_URL)
-      .post('/users', formValues)
-      .reply(201, { data: 'New user ID' });
 
     // После оставшихся асинхронных действий производим проверку
     await waitFor(() => {
