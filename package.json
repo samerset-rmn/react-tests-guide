@@ -12,7 +12,6 @@
   "dependencies": {
     "formik": "^2.2.6",
     "lodash": "^4.17.21",
-    "next": "^10.2.3",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
