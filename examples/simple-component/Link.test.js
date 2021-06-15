@@ -17,7 +17,7 @@ describe('Link comp-t', () => {
     // Находим элемент
     const link = screen.getByRole('link', { name: 'Link text' });
 
-    // Проверяем, что переданные props успешно приняты
+    // Проверяем, что переданные props успешно использованы
     expect(link).toHaveTextContent('Link text');
     expect(link).toHaveAttribute('href', 'https://www.google.com');
   });

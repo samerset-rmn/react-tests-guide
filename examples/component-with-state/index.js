@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Компонент с состоянием.
- * Отображает модальное окно, открываемое по нажатию на кнопку.
+ * Отображает модальное окно по нажатию на кнопку.
  */
 function TextModal({ children }) {
   const [isOpen, setIsOpen] = useState(false);

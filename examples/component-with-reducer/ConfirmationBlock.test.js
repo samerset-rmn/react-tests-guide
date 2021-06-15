@@ -15,7 +15,7 @@ describe('ConfirmationBlock comp-t', () => {
     // Меняем состояние при клике на кнопку
     userEvent.click(screen.getByRole('button', /подтвердить/i));
 
-    // Проверяем, что состояние обновилось
+    // Проверяем, что сообщение обновилось (следовательно, state работает верно)
     expect(screen.getByText(/готово/i)).toBeInTheDocument();
   });
 });
