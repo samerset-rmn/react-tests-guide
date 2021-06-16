@@ -131,7 +131,7 @@ describe('Main logic tests', () => {
 
 Примеры есть в\
 [/examples/component-with-state](/examples/component-with-state)\
-[/examples/component-with-reducer](/examples/component-with-reducer).
+[/examples/component-with-reducer](/examples/component-with-reducer)
 
 ### Как тестировать `fetch` запросы?
 
