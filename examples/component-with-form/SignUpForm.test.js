@@ -41,7 +41,7 @@ describe('SignUpForm comp-t', () => {
     userEvent.type(nameInput, formValues.name);
     userEvent.type(jobInput, formValues.job);
 
-    // Отмечаем обязательный чекбокс и проверяем енр
+    // Отмечаем обязательный чекбокс и проверяем его состояние
     userEvent.click(policyCheckbox);
     expect(policyCheckbox).toBeChecked();
 
@@ -51,11 +51,9 @@ describe('SignUpForm comp-t', () => {
       policy: true,
     });
 
-    // Устанавливаем перехватчик POST запроса из формы.
-    // Во время запроса возвращаем подделаный успешный ответ (! URL API должен быть настоящий)
-    nock(BASE_URL)
-      .post('/users', formValues)
-      .reply(201, { data: 'New user ID' });
+    // Устанавливаем перехватчик POST запроса.
+    // Во время запроса возвращаем подделаный успешный ответ (! URL запроса должен быть настоящим)
+    nock(BASE_URL).post('/users', formValues).reply(201, true);
 
     // Запускаем отправку формы и проверяем, что кнопка "Отправить" выключилась
     userEvent.click(submitButton);

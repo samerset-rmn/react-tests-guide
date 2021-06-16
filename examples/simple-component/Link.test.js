@@ -14,7 +14,7 @@ describe('Link comp-t', () => {
     // Передаем props в компонент и рендерим его
     render(<Link {...props} />);
 
-    // Находим элемент
+    // Находим главный элемент компонента (ссылку)
     const link = screen.getByRole('link', { name: 'Link text' });
 
     // Проверяем, что переданные props успешно использованы

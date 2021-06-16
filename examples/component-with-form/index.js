@@ -11,7 +11,6 @@ import { BASE_URL } from './config';
  */
 const sendSignUpRequest = async (values) => {
   return fetch(`${BASE_URL}/users`, {
-    mode: 'cors',
     method: 'POST',
     body: JSON.stringify(values),
   })

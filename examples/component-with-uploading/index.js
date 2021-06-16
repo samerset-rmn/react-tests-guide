@@ -11,7 +11,6 @@ import { actionTypes, initialState, reducer } from './reducer';
  */
 const loadUsers = async (page) => {
   return fetch(`${BASE_URL}/users?page=${page}`, {
-    mode: 'cors',
     method: 'GET',
   })
     .then((res) => {
@@ -24,8 +23,7 @@ const loadUsers = async (page) => {
 
 /**
  * Компонент со списком элементов.
- * Сначала рендерится первая часть списка. После нажатия на кнопку "Показать ещё"
- * подзагружаются следующие элементы.
+ * По нажатию на кнопку "Показать ещё" подгружаются следующие элементы из API.
  */
 function UserList({ listItems }) {
   const [state, dispatch] = useReducer(

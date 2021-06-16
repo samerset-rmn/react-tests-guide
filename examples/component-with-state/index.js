@@ -8,14 +8,14 @@ import PropTypes from 'prop-types';
 function TextModal({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onClickHandler = () => setIsOpen((state) => !state);
+  const clickHandler = () => setIsOpen((state) => !state);
 
   return (
     <div>
       <button
         type="button"
         aria-label={`${isOpen ? 'Закрыть' : 'Открыть'} модальное окно`}
-        onClick={onClickHandler}
+        onClick={clickHandler}
       />
       <div
         role="dialog"
