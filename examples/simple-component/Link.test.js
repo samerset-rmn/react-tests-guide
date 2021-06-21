@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import Link from '.';
 
 describe('Link comp-t', () => {
-  test('render comp-t with props', () => {
+  test('renders comp-t with props', () => {
     // Создаем объект props
     const props = {
       name: 'Link text',
