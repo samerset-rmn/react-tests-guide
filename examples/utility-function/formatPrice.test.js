@@ -15,7 +15,7 @@ describe('formatPrice util function', () => {
     expect(result).toBe(expected);
   });
 
-  test('returns error after invoking with wrong param type', () => {
+  test('throws error after invoking with wrong param type', () => {
     // Передаем в функцию неверные параметры и проверяем, что она возвращает ошибку
     expect(() => formatPrice(undefined)).toThrow();
     expect(() => formatPrice(null)).toThrow();
