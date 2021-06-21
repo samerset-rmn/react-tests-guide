@@ -1,6 +1,7 @@
 {
   "env": {
     "test": {
+      // Если в проекте не используется `next.js`, то здесь должны использоваться `@babel/core` и `@babel/preset-env`
       "presets": ["next/babel"]
     }
   }
