@@ -23,7 +23,7 @@ const props = {
 };
 
 describe('UserList comp-t', () => {
-  it('renders with props', () => {
+  test('render comp-t with props', () => {
     // Рендерим компонент с props
     render(<UserList {...props} />);
 
@@ -31,7 +31,7 @@ describe('UserList comp-t', () => {
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });
 
-  it('uploads next list items on click', async () => {
+  test('upload next list items on click', async () => {
     // Рендерим компонент с props
     render(<UserList {...props} />);
 

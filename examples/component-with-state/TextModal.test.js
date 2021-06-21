@@ -5,13 +5,23 @@ import userEvent from '@testing-library/user-event';
 import TextModal from '.';
 
 describe('TextModal comp-t', () => {
-  it('changes the modal visibility by clicking on button', () => {
+  // Рендерим компонент с props перед каждым тестом
+  beforeEach(() => {
     // Содержимое компонента
     const modalContent = 'Окно с текстом';
 
     // Рендерим компонент с содержимым модалки
     render(<TextModal>{modalContent}</TextModal>);
+  });
 
+  test('render comp-t with props', () => {
+    // Компонент успешно отрендерен с props
+    expect(screen.getByRole('dialog', { hidden: true })).toHaveTextContent(
+      'Окно с текстом'
+    );
+  });
+
+  test('change the modal visibility by clicking on button', () => {
     // Находим кнопку для открытия модалки
     const button = screen.getByRole('button', { name: /(закрыть|открыть)/i });
     // И саму модалку (передаем параметр `hidden: true`, т.к. она изначально не отображается и `getByRole` ее не видит)
@@ -19,9 +29,8 @@ describe('TextModal comp-t', () => {
       hidden: true,
     });
 
-    // Проверяем, что модалка невидима и содержит текст, который мы передали
+    // Проверяем, что изначально модалка не отображается
     expect(modal).not.toBeVisible();
-    expect(modal).toHaveTextContent(modalContent);
 
     // Открываем модалку по клику на кнопку
     userEvent.click(button);

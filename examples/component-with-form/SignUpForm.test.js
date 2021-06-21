@@ -7,22 +7,15 @@ import { BASE_URL } from './config';
 import SignUpForm from '.';
 
 describe('SignUpForm comp-t', () => {
-  it('renders component successfully', () => {
+  test('submit form and sends request with the form data', async () => {
     // Рендерим компонент
     render(<SignUpForm />);
 
-    // Проверяем, что он успешно отрендерился
-    expect(screen.getByRole('form')).toBeInTheDocument();
-  });
-
-  it('submits form and sends request with the form data', async () => {
-    // Рендерим компонент
-    render(<SignUpForm />);
-
-    // Записываем значения полей, которые хотим ввести в форму
+    // Сохраняем значения полей, которые должны быть в форме
     const formValues = {
       name: 'Роман',
       job: 'Программист',
+      policy: true,
     };
 
     // Находим элементы формы
@@ -46,29 +39,32 @@ describe('SignUpForm comp-t', () => {
     expect(policyCheckbox).toBeChecked();
 
     // Проверяем, что все поля заполнены и сохранены в форме
-    expect(form).toHaveFormValues({
-      ...formValues,
-      policy: true,
-    });
+    expect(form).toHaveFormValues(formValues);
 
     // Устанавливаем перехватчик POST запроса.
     // Во время запроса возвращаем подделаный успешный ответ (! URL запроса должен быть настоящим)
-    nock(BASE_URL).post('/users', formValues).reply(201, true);
+    nock(BASE_URL)
+      .post('/users', {
+        name: formValues.name,
+        job: formValues.job,
+      })
+      .reply(201, true);
 
     // Запускаем отправку формы и проверяем, что кнопка "Отправить" выключилась
     userEvent.click(submitButton);
     expect(submitButton).toBeDisabled();
 
-    // После оставшихся асинхронных действий производим проверку
+    // После завершения асинхронных действий выполняем проверку
     await waitFor(() => {
       // Кнопка "Отправить" вернулась во включенное состояние
       expect(submitButton).toBeEnabled();
-      // Поля формы очищены
-      expect(form).toHaveFormValues({
-        name: '',
-        job: '',
-        policy: false,
-      });
+    });
+
+    // Поля формы очищены
+    expect(form).toHaveFormValues({
+      name: '',
+      job: '',
+      policy: false,
     });
   });
 });
