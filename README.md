@@ -67,7 +67,7 @@ test('should send request on form submit', () => {...})
 Для объединения тестов, относящихся к одному тестируемому объекту используется функция-обертка `describe()`. Тестируемым объектом может быть компонент, функция, бизнес-логика и другие структуры.
 
 ```js
-describe('Some function', () => {
+describe('functionName', () => {
     test('should do something', () => {...})
 })
 ```
