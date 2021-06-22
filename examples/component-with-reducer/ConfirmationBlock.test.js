@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import ConfirmationBlock from '.';
 
 describe('ConfirmationBlock comp-t', () => {
-  test('shows success message after confirm button is clicked', () => {
+  test('should show success message on click on the confirm button', () => {
     // Рендерим компонент
     render(<ConfirmationBlock />);
 

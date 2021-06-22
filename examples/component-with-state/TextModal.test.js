@@ -14,14 +14,14 @@ describe('TextModal comp-t', () => {
     render(<TextModal>{modalContent}</TextModal>);
   });
 
-  test('renders comp-t with props', () => {
+  test('should render comp-t with props', () => {
     // Компонент успешно отрендерен с props
     expect(screen.getByRole('dialog', { hidden: true })).toHaveTextContent(
       'Окно с текстом'
     );
   });
 
-  test('changes the modal visibility by clicking on button', () => {
+  test('should change a modal visibility on click on the button', () => {
     // Находим кнопку для открытия модалки
     const button = screen.getByRole('button', { name: /(закрыть|открыть)/i });
     // И саму модалку (передаем параметр `hidden: true`, т.к. она изначально не отображается и `getByRole` ее не видит)
