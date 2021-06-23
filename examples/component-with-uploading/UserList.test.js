@@ -38,7 +38,7 @@ describe('UserList comp-t', () => {
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });
 
-  test('should upload next list items on click on the "Load more" button', async () => {
+  test('should upload next list items when click on the "Load more" button', async () => {
     // Находим кнопку "Показать ещё"
     const loadMoreButton = screen.getByRole('button', {
       name: /показать ещё/i,

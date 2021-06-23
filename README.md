@@ -84,8 +84,8 @@ describe.skip('...', () => {...})
 
 Название каждого теста должно отражать его цель и действие. В начале ставится слово _should_, затем идет описание ожидаемого результата и в конце идет действие, которое должно привести к нему. Примеры:
 
-- `test('should open a modal on click on the button')`
-- `test('should change city on dispatch CHANGE_CITY action')`
+- `test('should open a modal when click on the button')`
+- `test('should change city when dispatch CHANGE_CITY action')`
 - `test('should render comp-t with props')`
 
 Тест-кейсы (описываемые функцией `describe()`) должны называться имененем тестируемого объекта, к которому относятся все тесты внутри. Примеры:
