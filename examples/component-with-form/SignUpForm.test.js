@@ -7,7 +7,7 @@ import { BASE_URL } from './config';
 import SignUpForm from '.';
 
 describe('SignUpForm comp-t', () => {
-  test('submits form and sends request with the form data', async () => {
+  test('should send request with the form data when submit the form', async () => {
     // Рендерим компонент
     render(<SignUpForm />);
 

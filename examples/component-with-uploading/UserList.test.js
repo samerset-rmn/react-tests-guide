@@ -28,7 +28,7 @@ describe('UserList comp-t', () => {
     render(<UserList {...props} />);
   });
 
-  test('renders comp-t with props', () => {
+  test('should render comp-t with props', () => {
     // Список отрендерен с 2 элементами
     props.listItems.forEach((listItem) => {
       expect(
@@ -38,7 +38,7 @@ describe('UserList comp-t', () => {
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });
 
-  test('uploads next list items on click', async () => {
+  test('should upload next list items when click on the "Load more" button', async () => {
     // Находим кнопку "Показать ещё"
     const loadMoreButton = screen.getByRole('button', {
       name: /показать ещё/i,
