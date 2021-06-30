@@ -64,7 +64,7 @@
 test('should send request on form submit', () => {...})
 ```
 
-Для объединения тестов, относящихся к одному тестируемому объекту используется функция-обертка `describe()`. Тестируемым объектом может быть компонент, функция, бизнес-логика и другие вещи.
+Для объединения тестов, относящихся к одному тестируемому объекту используется функция-обертка `describe()`. Тестируемым объектом может быть компонент, функция и другие вещи.
 
 ```js
 describe('functionName', () => {
@@ -89,11 +89,11 @@ describe.skip('...', () => {...})
 - `test('should render comp-t with props')`
 
 Тест-кейсы (описываемые функцией `describe()`) должны называться имененем тестируемого объекта, к которому относятся все тесты внутри. Примеры:
+
 - Компонент: `describe('ComponentName comp-t')`
 - Функция: `describe('functionName function')`
 - Редьюсер компонента: `describe('ComponentName reducer')`
 - Redux-редьюсер: `describe('Redux reducer reducerName')`
-- Бизнес-логика: `describe('"Business logic name" business logic')`
 
 ## Вступление
 
