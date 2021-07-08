@@ -5,7 +5,7 @@ module.exports = {
   testMatch: ['<rootDir>/tests/**/*.js', '**/*.test.js'],
   testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules', '<rootDir>'],
-  // Поддержка алиасов абсолютных путей импорта, указанных в jsconfig.json
+  // Поддержка absolute path imports, указанных в jsconfig.json
   moduleNameMapper: {
     '^@sharedComp/(.*)$': '<rootDir>/components/_shared/$1',
     '^@config$': '<rootDir>/config',

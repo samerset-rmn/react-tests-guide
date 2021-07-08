@@ -24,7 +24,7 @@ describe('TextModal comp-t', () => {
   test('should change a modal visibility when click on the button', () => {
     // Находим кнопку для открытия модалки
     const button = screen.getByRole('button', { name: /(закрыть|открыть)/i });
-    // И саму модалку (передаем параметр `hidden: true`, т.к. она изначально не отображается и `getByRole` ее не видит)
+    // И саму модалку (передаем параметр `hidden: true`, т.к. она изначально не отображается и `getByRole` ее не найдет)
     const modal = screen.getByRole('dialog', {
       hidden: true,
     });
