@@ -133,7 +133,7 @@ describe.skip('...', () => {...})
 
 ### Как найти нужный DOM элемент?
 
-Используем запросы `(queries)` от библиотеки [@testing-library/react](https://testing-library.com/docs/react-testing-library/cheatsheet#queries).
+Используем запросы (`queries`) от библиотеки [@testing-library/react](https://testing-library.com/docs/react-testing-library/cheatsheet#queries).
 
 - Для элементов с определенной `aria` ролью используем `...ByRole` запросы.\
    Например:
